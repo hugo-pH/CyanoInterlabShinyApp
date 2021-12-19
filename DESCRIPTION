@@ -19,6 +19,7 @@ Imports:
     janitor,
     magrittr,
     markdown,
+    pkgload,
     purrr,
     readxl,
     rlang,
