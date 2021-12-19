@@ -10,8 +10,7 @@
 #'
 #' @return The same data.frame as the input but with an extra column with the background corrected variable
 #'
-#' @examples 
-#' background_correction(df = df.od, .var = OD_730, column_suffix = "bc")
+#' @examples
 #' 
 background_correction <- function(df, .var, column_suffix) {
   var <- rlang::enquo(.var)
@@ -94,11 +93,12 @@ od_correction <- function(df.od, df.fl, od_col = OD_730, fl_col = fl, bc_suffix 
 #' @return A data.frame containing a new column with normalized variable.
 #'
 #' @examples
+#' \dontrun{
 #' strain_normalization(df.pr.bc, 
 #' .var = fl_od, ref_strain = "J23100", 
 #' ref_induction = "-", 
 #' column_suffix = "norm")
-#' 
+#' }
 #' 
 strain_normalization <- function(df, .var, ref_strain, ref_induction, column_suffix){
   # browser()
@@ -143,7 +143,9 @@ strain_normalization <- function(df, .var, ref_strain, ref_induction, column_suf
 #'
 #' @return A single data.frame containing new columns for background-corrected, fluorescence per OD and reference strain normalized data.
 #'
-#' @examples df.plate.reader <- plate_reader_normalization_pipeline(
+#' @examples
+#' \dontrun{
+#' df.plate.reader <- plate_reader_normalization_pipeline(
 #' df.od = load_plate_reader_od(df.experiments.raw),
 #' df.fl = load_plate_reader_fl(df.experiments.raw),
 #' bc_suffix = "bc",
@@ -151,7 +153,7 @@ strain_normalization <- function(df, .var, ref_strain, ref_induction, column_suf
 #' ref_strain = "J23100",
 #' ref_induction = "-",
 #' norm_suffix  = "norm")
-#' 
+#' }
 #'   
 plate_reader_normalization_pipeline <- function(df.od, df.fl, bc_suffix,
                                                 od_col = OD_730, fl_col = fl,
