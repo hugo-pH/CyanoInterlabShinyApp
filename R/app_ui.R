@@ -12,7 +12,7 @@ app_ui <- function(request) {
     theme = shinythemes::shinytheme("sandstone"),
     tabPanel("Intro",
              value = "intro",
-             includeMarkdown("./md/intro.md"),
+             htmltools::includeMarkdown("./md/intro.md"),
              hr()),
     tabPanel("Spectrophotometer OD",
              value = "sp_od",
